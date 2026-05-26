@@ -12,10 +12,10 @@
 
             //Displays Menu to user 
             Console.WriteLine("Choose from the Menu ");
-            Console.Write("1.  Admin Login: ");
-            Console.Write("2.  Customer Login: ");
-            Console.Write("3.  Register new Customer: ");
-            Console.Write("99. Exit Application: ");
+            Console.WriteLine("1.  Admin Login: ");
+            Console.WriteLine("2.  Customer Login: ");
+            Console.WriteLine("3.  Register new Customer: ");
+            Console.WriteLine("99. Exit Application: ");
             
 
             int choice = Convert.ToInt32(Console.ReadLine());
