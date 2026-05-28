@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SkeletonFinalApp
-{
+{// This class represents a customer in the banking application.
+ // It contains properties for customer information, login credentials, and methods for customer actions such as viewing account details
     public class Customer
     {   //Properties
 
@@ -27,7 +28,7 @@ namespace SkeletonFinalApp
             UserName = userName;
             PassWord = passWord;
         }
-        //Methods for customer actions such as viewing account details, making transactions, etc. will be implemented here.
+        
        
         
 

@@ -1,4 +1,6 @@
-﻿namespace SkeletonFinalApp
+﻿using System.Diagnostics.Metrics;
+
+namespace SkeletonFinalApp
 {
     internal class Program
     {
@@ -32,9 +34,11 @@
                     //Will be Methods aswell
                     break;
                 case 3:
-                    //Registering a new Customer
-                    //Asking for username and password creation
-                    //Methods as well
+                //Registering a new Customer
+                //Asking for username and password creation
+                //Methods as well
+                    bankingService.HandleRegistration(); // handle registration logic in the BankingService class
+                  
                     break;
                 case 99:
                     Console.WriteLine("Exiting Application ");
