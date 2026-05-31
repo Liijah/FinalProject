@@ -10,14 +10,21 @@ namespace SkeletonFinalApp
     public class Customer
     {   //Properties
 
-        public string Name { get; private set; }
-        public string CustomerID { get; private set; }
-        public string ContactInfo { get; private set; }
+        public string Name { get; set; }
+        public string CustomerID { get; set; }
+        public string ContactInfo { get; set; }
 
         // login credentials and customer information will be stored.
 
-        public string UserName { get; private set; }
+        public string UserName { get; set; }
         public string PassWord { get; private set; }
+
+        //Account balance
+
+        public decimal AccountBalance { get; set; }
+
+        //Register time for the customer
+        public DateTime RegistrationDate { get; private set; }
 
         //Constructor
         public Customer(string name, string customerID, string contactInfo, string userName, string passWord)
@@ -27,10 +34,18 @@ namespace SkeletonFinalApp
             ContactInfo = contactInfo;
             UserName = userName;
             PassWord = passWord;
+            AccountBalance = 0.0m; // Initial account balance is set to 0
+            RegistrationDate = DateTime.Now; // Set registration date to current date and time
         }
-        
-       
-        
+
+        // Method to verify the customer's password during login
+        public bool VerifyPassword(string input)
+        {
+            
+            return this.PassWord == input;
+        }
+
+
 
     }//End of Class Customer
 }//End of Namespace
