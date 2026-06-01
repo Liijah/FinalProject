@@ -10,10 +10,21 @@ namespace SkeletonFinalApp
     {
 
         //Fields
-        private string userName;
-        private string passWord;
+       
+            public string UserName { get; private set; }
+            private string _password;
 
+            public Admin(string username, string password)
+            {
+                UserName = username;
+                _password = password;
+            }
 
+            public bool VerifyPassword(string inputPassword)
+            {
+                return _password == inputPassword;
+            }
+        }
 
 
     }//End of Class Admin
