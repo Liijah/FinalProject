@@ -42,4 +42,20 @@ namespace SkeletonFinalApp
 
         }
     }
-}
+
+
+    // Inside BankingService.cs
+public void GenerateProof(string customerID)
+        {
+            Customer c = SearchCustomer(customerID);
+            if (c != null)
+            {
+                DocumentPrinte printer = new DocumentPrinter();
+                printer.PrintStatement(c);
+            }
+            else
+            {
+                Console.WriteLine("Error: Customer not found.");
+            }
+        }
+    }

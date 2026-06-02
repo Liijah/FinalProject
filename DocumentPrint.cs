@@ -13,10 +13,10 @@ namespace SkeletonFinalApp
             Console.WriteLine("----------------------------------");
             Console.WriteLine("      OFFICIAL ACCOUNT PROOF      ");
             Console.WriteLine("----------------------------------");
-            Console.WriteLine($"Customer Name: {customer.Name}");
-            Console.WriteLine($"Customer ID:   {customer.CustomerID}");
-            Console.WriteLine($"Date Issued:   {DateTime.Now.ToShortDateString()}");
-            Console.WriteLine($"Current Balance: {customer.AccountBalance:C}"); // :C formats as currency
+            Console.WriteLine($"Customer Name: \t {customer.Name}");
+            Console.WriteLine($"Customer ID:   \t {customer.CustomerID}");
+            Console.WriteLine($"Date Issued:   \t {DateTime.Now.ToShortDateString()}");
+            Console.WriteLine($"Current Balance: \t {customer.AccountBalance:C}"); // :C formats as currency
             Console.WriteLine("----------------------------------");
             Console.WriteLine("     End of Statement Record      ");
 
