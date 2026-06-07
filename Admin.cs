@@ -30,7 +30,7 @@ namespace SkeletonFinalApp
             Console.Write("Enter Username: ");
             string userName = Console.ReadLine();
             Console.Write("Enter Password: ");
-            string password = Console.ReadLine(); // simple version for now
+            string password = BankingService.ReadMaskedInput(); // password masking added
             // Add the new customer to the shared customer list
             Customer newCustomer = new Customer(name, id, contact, userName, password);
             _customers.Add(newCustomer);
@@ -61,6 +61,21 @@ namespace SkeletonFinalApp
             return false;
         }//End of DeleteCustomer method
 
+        // Update a customer contact by ID
+        public void UpdateCustomer(string customerID)
+        {
+            Customer c = SearchCustomer(customerID);
+            if (c != null)
+            {
+                Console.Write("Enter new Contact: ");
+                string newContact = Console.ReadLine();
+                c.UpdateContact(newContact);
+                Console.WriteLine("Customer updated successfully.");
+            }
+            else
+                Console.WriteLine("Error: Customer not found.");
+        }//End of UpdateCustomer method
+
         // Show Admin Menu after login
         public void ShowAdminMenu()
         {
@@ -71,6 +86,8 @@ namespace SkeletonFinalApp
                 Console.WriteLine("1. Register New Customer");
                 Console.WriteLine("2. Search Customer");
                 Console.WriteLine("3. Delete Customer");
+                Console.WriteLine("4. Update Customer Contact");
+                Console.WriteLine("5. Generate Customer Proof");
                 Console.WriteLine("0. Logout");
                 Console.Write("Choice: ");
 
@@ -87,7 +104,7 @@ namespace SkeletonFinalApp
                             Console.Write("Enter Customer ID: ");
                             Customer found = SearchCustomer(Console.ReadLine());
                             if (found != null)
-                                Console.WriteLine($"Found: {found.Name}, ID: {found.CustomerID}");
+                                Console.WriteLine($"Found: {found.Name}, ID: {found.CustomerID}, Contact: {found.ContactInfo}, Balance: {found.AccountBalance:C}");
                             else
                                 Console.WriteLine("Customer not found.");
                             break;
@@ -95,6 +112,23 @@ namespace SkeletonFinalApp
                             //Delete a customer by ID
                             Console.Write("Enter Customer ID to delete: ");
                             DeleteCustomer(Console.ReadLine());
+                            break;
+                        case 4:
+                            //Update a customer contact by ID
+                            Console.Write("Enter Customer ID to update: ");
+                            UpdateCustomer(Console.ReadLine());
+                            break;
+                        case 5:
+                            //Generate proof for a customer using DocumentPrint
+                            Console.Write("Enter Customer ID: ");
+                            Customer c = SearchCustomer(Console.ReadLine());
+                            if (c != null)
+                            {
+                                DocumentPrint printer = new DocumentPrint();
+                                printer.PrintStatement(c);
+                            }
+                            else
+                                Console.WriteLine("Error: Customer not found.");
                             break;
                         case 0:
                             adminLoggedIn = false; // logout
