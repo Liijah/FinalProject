@@ -144,7 +144,7 @@ namespace SkeletonFinalApp
                         else
                         {
                             invalidAttempts--;
-                            Console.WriteLine($"Invalid amount. Attempts left: {invalidAttempts}"); 
+                            Console.WriteLine($"Invalid amount. Attempts left: {invalidAttempts}");
                         }
                         break;
                     case 3:
@@ -185,7 +185,7 @@ namespace SkeletonFinalApp
                     Console.WriteLine("Too many invalid attempts. Returning to Main Menu.");
                     break; //Exit the customer menu loop
                 }
-            }while (customerLoggedIn); //End of do-while loop
+            } while (customerLoggedIn); //End of do-while loop
         }//End of ShowCustomerMenu method
 
         //View Balance method - displays the current account balance for the logged-in customer
@@ -233,7 +233,7 @@ namespace SkeletonFinalApp
                 return;
             }
 
-            if(amount <= 0)
+            if (amount <= 0)
             {
                 Console.WriteLine("Withdrawal amount must be greater than zero.");
                 return;
@@ -278,6 +278,7 @@ namespace SkeletonFinalApp
             return input;
         }//End of ReadMaskedInput method
     }//End of Class BankingService
+}
 
 
     

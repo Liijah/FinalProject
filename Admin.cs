@@ -104,7 +104,7 @@ namespace SkeletonFinalApp
                             Console.Write("Enter Customer ID: ");
                             Customer found = SearchCustomer(Console.ReadLine());
                             if (found != null)
-                                Console.WriteLine($"Found: {found.Name}, ID: {found.CustomerID}, Contact: {found.ContactInfo}, Balance: {found.AccountBalance:C}");
+                                Console.WriteLine($"Found: {found.Name}, ID: {found.CustomerID}, Contact: {found.Contact}, Balance: {found.AccountBalance:C}");
                             else
                                 Console.WriteLine("Customer not found.");
                             break;
