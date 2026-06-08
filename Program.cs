@@ -22,7 +22,6 @@ namespace SkeletonFinalApp
                 Console.WriteLine("Choose from the Menu ");
                 Console.WriteLine("1.  Admin Login: ");
                 Console.WriteLine("2.  Customer Login: ");
-                Console.WriteLine("3.  Register new Customer: ");
                 Console.WriteLine("99. Exit Application: ");
 
 
@@ -39,13 +38,9 @@ namespace SkeletonFinalApp
                         //Same with password and username criteria
                         //Will be Methods aswell
                         break;
-                    case 3:
-                        //Registering a new Customer
-                        //Asking for username and password creation
-                        //Methods as well
-                        bankingService.HandleRegistration(); // handle registration logic in the BankingService class
+                   
 
-                        break;
+             
                     case 99:
                         isRunning = false;
                         Console.WriteLine("Exiting Application ");
