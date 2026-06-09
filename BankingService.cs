@@ -12,7 +12,7 @@ namespace SkeletonFinalApp
     public class BankingService
     {
         //Create list of customers to store registered customers
-        private List<Customer> _customers = new List<Customer>();
+        public List<Customer> _customers = new List<Customer>();
 
         //Customer login method
         public bool HandleCustomerLogin()

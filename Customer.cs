@@ -25,6 +25,16 @@ namespace SkeletonFinalApp
             AccountBalance = 0; // new customers start with a balance of 0
         }
 
+        // Override GetRole to return "Customer"
+        // In practice, admin and customer apps are usually separate,
+        // but this demonstrates polymorphism through method overriding
+        public override string GetRole()
+        {
+            return "Customer";
+        }//End of GetRole method
+
+
+
         //Update Contact - for Admin to update customer contact information
         public void UpdateContact(string newContact)
         {

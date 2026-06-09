@@ -76,6 +76,17 @@ namespace SkeletonFinalApp
                 Console.WriteLine("Error: Customer not found.");
         }//End of UpdateCustomer method
 
+
+
+
+        // Override GetRole to return "Admin"
+        // In practice, admin and customer apps are usually separate,
+        // but this demonstrates polymorphism through method overriding
+        public override string GetRole()
+        {
+            return "Admin";
+        }//End of GetRole method
+
         // Show Admin Menu after login
         public void ShowAdminMenu()
         {
